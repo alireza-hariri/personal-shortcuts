@@ -7,35 +7,41 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
+;;
+; this script is for my personal shortcuts
+; in AHK there is abbreviation for special keys:
+; # mean windows or command key
+; ^ mean control
+; + mean shift
+; ! mean alt
 
 
 #s::
 run, "C:\Program Files\Everything\Everything.exe";
 return
 
-#,::
-!,::
+#,:: 
+!,::  
 Ralt & ,::
 send, {Control down}{LWinDOWN}{Left}{LWinUp}{Control up}
 return
 
 
-#.::
-!.::
+#.::  ;; windows + .
 Ralt & .::
 send, {Control down}{LWinDOWN}{Right}{LWinUp}{Control up}
 return
 
 
-#n:: ;; windows + n
-!n:: ;; alt + c
-Ralt & n:: ;; Ralt + c
+#n:: 
+!n:: 
+Ralt & n:: 
 send, {Control down}{LWinDOWN}d{LWinUp}{Control up}
 return
 
 
-#c:: ;; windows + c
-!c:: ;; alt + c
+#c:: 
+!c::
 Ralt & c::
 send, {Control down}{LWinDOWN}{F4}{LWinUp}{Control up}
 return
@@ -61,7 +67,12 @@ return
 
 
 ^e::
-send,+{F10}e
+send,{AppsKey}
+Sleep 170
+send, w
+Sleep 200
+send, n
+send, {Enter}
 return
 
 

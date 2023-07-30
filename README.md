@@ -15,10 +15,12 @@ list of shortcuts
 | `Alt` + `t` | open selected text in google translate <br/>step-1: copy selected text<br/>step-2: open in google translate in browser (python script)|
 | `Alt` + `f` | place a RTL-Mark character (fixing farsi-RTL) |
 | `Ctrl`+`Shift`+`s` | open my personal working folder |
-
+| `Ctrl`+`e` | open selected file in Notepad++ |
 
 install AHK:  
 [https://www.autohotkey.com/](https://www.autohotkey.com/)
 
 python script need pyperclip:  
-```pip install pyperclip```
+```shell
+pip install pyperclip
+```
