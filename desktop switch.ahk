@@ -3,19 +3,15 @@
 
 
 
-
-
-
-
-
-
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
 #SingleInstance force
 
-#s::run, "C:\Program Files\Everything\Everything.exe";
 
+
+#s::
+run, "C:\Program Files\Everything\Everything.exe";
+return
 
 #,::
 !,::
@@ -31,21 +27,21 @@ send, {Control down}{LWinDOWN}{Right}{LWinUp}{Control up}
 return
 
 
-#n::
-!n::
-Ralt & n::
+#n:: ;; windows + n
+!n:: ;; alt + c
+Ralt & n:: ;; Ralt + c
 send, {Control down}{LWinDOWN}d{LWinUp}{Control up}
 return
 
 
-#c::
-!c::
+#c:: ;; windows + c
+!c:: ;; alt + c
 Ralt & c::
 send, {Control down}{LWinDOWN}{F4}{LWinUp}{Control up}
 return
 
 ^+s::
-run, "C:\Users\alireza\Documents\my-path"
+run, "%A_WorkingDir%\..\..\..\my-path"
 return
 
 Ralt::
