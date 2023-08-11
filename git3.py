@@ -32,15 +32,13 @@ def run_cmd(
 
 n_arg = len(sys.argv) - 1
 
+msg = sys.argv[2]
+if ' ' not in msg:
+    msg = msg.replace('-',' ')
 
 if n_arg == 2 :
     run_cmd(f'git add {sys.argv[1]}', print_stdout=True,exit_on_err=True)
-
-    msg = sys.argv[2]
-    if ' ' not in msg:
-        msg = msg.replace('-',' ')
     run_cmd(f'git commit -m "{msg}"', print_stdout=True, exit_on_err=True)
-
     run_cmd(f'git push', print_stdout=True)
 
 else:
