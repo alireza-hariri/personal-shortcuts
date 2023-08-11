@@ -24,3 +24,14 @@ python script need pyperclip:
 ```shell
 pip install pyperclip
 ```
+
+#### `git3` 
+ git3 is created to do `git add` , `git commit` and `git push` at the same time.  
+ it is a dead simple tool for repetitive scenario.
+
+install:  
+1. see path directorys with `echo  $Env:PATH`
+2. put git3.bat in one of your path directorys
+
+usage:  
+`git3 [add_file_or_folder] [commit_message]`
