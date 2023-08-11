@@ -62,13 +62,13 @@ return
 
 
 !f::
-Send {U+200F} ;{U+202B} 
+Send  {U+200F}{U+202B}{U+2067}
 return
 
 
 ^e::
 send,{AppsKey}
-Sleep 170
+Sleep 180
 send, w
 Sleep 200
 send, n
@@ -76,5 +76,31 @@ send, {Enter}
 return
 
 
+^+1::
+full_command_line := DllCall("GetCommandLine", "str")
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    Run *RunAs "C:\Users\alireza\Documents\my-path\etc\prosonal shortcuts\desktop switch.ahk"	/restart
+}
+Run netsh interface ip set dns name="Wi-Fi" static 8.8.8.8
+return 
+
+^+2::
+full_command_line := DllCall("GetCommandLine", "str")
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    Run *RunAs "C:\Users\alireza\Documents\my-path\etc\prosonal shortcuts\desktop switch.ahk"	/restart
+}
+Run netsh interface ip set dns name="Wi-Fi" static 10.202.10.202
+return 
+
+^+0::
+full_command_line := DllCall("GetCommandLine", "str")
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    Run *RunAs "C:\Users\alireza\Documents\my-path\etc\prosonal shortcuts\desktop switch.ahk"	/restart
+}
+Run netsh interface ip set dns name="Wi-Fi" dhcp
+return 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
